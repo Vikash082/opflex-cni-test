@@ -330,7 +330,7 @@ spec:
           effect: NoSchedule
       containers:
         - name: aci-containers-host
-          image: 1.100.201.1:5000/aci-containers-host:ci_test
+          image: krvikash/aci-containers-host
           imagePullPolicy: Always
           securityContext:
             capabilities:
@@ -544,14 +544,14 @@ spec:
           effect: NoSchedule
       containers:
         - name: aci-gbpserver
-          image: 1.100.201.1:5000/gbpserver:ci_test
+          image: krvikash/gbpserver
           imagePullPolicy: Always
           volumeMounts:
             - name: kubeconfig
               mountPath: /kube
 
         - name: aci-containers-controller
-          image: challa/aci-containers-controller:final
+          image: krvikash/aci-containers-controller
           imagePullPolicy: Always
           volumeMounts:
             - name: controller-config-volume
